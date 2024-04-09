@@ -10,11 +10,26 @@ this approximation and that displays the resulting value.
 
 pi = math.pi
 leibniz = 'pi/4'
-number_of_iterations = int(input("Enter number of iterations: "))
+iterations = int(input("Enter number of iterations: "))
 array = []
 
-for i in range(iterations):
-    for j in range(3, i, 2):
-        array.append(j)
+for i in range(3, iterations*2, 2):
+        array.append(i)
 
-print(f'{leibniz} =  1 - 1/ {array}')
+print(array)
+
+counter = 0
+while counter < len(array):
+        for i in array:
+                if counter == 0:
+                        print(f'{leibniz} = 1')
+                        print(f'- 1/{array[i]}')
+                        counter += 1
+                elif (counter % 2) == 0:
+                        print(f'- 1/{array[i]}')
+                        counter += 1
+                elif (counter % 2) != 0:
+                        print(f'+ 1/{array[i]}')
+                        counter += 1
+                else:
+                        print("invalid input value")
