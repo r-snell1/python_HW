@@ -8,3 +8,7 @@ be in tabular format with the appropriate header. Each line should contain an
 employee’s name, the hours worked, and the wages paid for that period.
 """
 
+input_filename = input("Enter file name: ")
+input_file = open(input_filename, "r")
+print("\t name\twage\thoursworked")
+print(input_file.read())
