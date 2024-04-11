@@ -8,9 +8,24 @@ Write a program that allows the user to specify the number of iterations used in
 this approximation and that displays the resulting value.
 """
 
-pi = math.pi
-leibniz = 'pi/4'
+
 iterations = int(input("Enter number of iterations: "))
+array = []
+def calcPi(array):
+
+        pi_over_4 = 1
+
+        for n in range( iterations ):
+
+                pi_over_4 += (-1)**n/(2*n +1)
+                array.append(pi_over_4)
+        return pi_over_4*4
+
+calcPi(array)
+print(array)
+
+
+"""
 array = []
 
 for i in range(3, iterations*2, 2):
@@ -33,3 +48,4 @@ while counter < len(array):
                         counter += 1
                 else:
                         print("invalid input value")
+"""
