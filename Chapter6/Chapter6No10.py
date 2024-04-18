@@ -10,4 +10,38 @@ function has been called with a start value as well. Thus, the first part of the
 code establishes what the values of the parameters are or should be. The
 rest of the code uses those values to build a list by counting up or down.)
 """
+import os
 
+
+def main():
+    start = int(input("Enter start value:"))
+    stop = int(input("Enter stop value:"))
+    myArray = []
+    myRange(start, stop, myArray)
+    print(myArray)
+
+
+def myRange(start, stop, myArray):
+    for i in range(start, stop+1):
+        myArray.append(start + randunder(stop - start +1))
+    return myArray
+
+def randunder(num):
+    if num <= 0:
+        raise ValueError("n must be greater than or equal to zero")
+    kilo = num.bit_length()
+    numbytes = (kilo + 7)//8
+    while True:
+        ran = int.from_bytes(random_bytes(numbytes), 'big')
+        ran >>= numbytes * 8 - kilo
+        if ran < num:
+            return ran
+
+
+def random_bytes(n):
+    with open('/dev/urandom', 'rb') as file:
+        return file.read(n)
+
+
+if __name__ == "__main__":
+    main()
