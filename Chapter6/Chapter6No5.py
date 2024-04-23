@@ -20,6 +20,8 @@ def isSorted(myList):
     for i in range(len(myList)):
         if myList[i] > myList[i+1]:
             return False
+        else:
+            return True
 
 
 
